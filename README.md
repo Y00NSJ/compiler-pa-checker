@@ -31,3 +31,7 @@
 
 ## Upcoming Next
 - [ ] parse tree 시각화
+
+------
+### Author
+[Yoon SeoJin](https://github.com/Y00NSJ/compiler-pa-checker)
