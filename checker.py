@@ -1,6 +1,6 @@
 import argparse
 import sys
-
+import os
 
 def compare_lines(answer_lines, input_lines, answer_name='answer.txt', input_name='입력'):
     max_lines = max(len(answer_lines), len(input_lines))
@@ -37,6 +37,9 @@ def main():
     # 파이프 입력 (stdin)
     if not sys.stdin.isatty():
         input_lines = sys.stdin.readlines()
+        if not os.path.exists('answer.txt'):
+            print("[ERROR] answer.txt 파일이 존재하지 않습니다.")
+            return
         with open('answer.txt', 'r', encoding='utf-8') as f:
             answer_lines = f.readlines()
         compare_lines(answer_lines, input_lines, 'answer.txt', '표준 입력')
@@ -44,6 +47,9 @@ def main():
 
     # 인자 1개 → answer.txt와 비교
     if len(args.files) == 1:
+        if not os.path.exists('answer.txt'):
+            print("[ERROR] answer.txt 파일이 존재하지 않습니다.")
+            return
         with open('answer.txt', 'r', encoding='utf-8') as f1, open(args.files[0], 'r', encoding='utf-8') as f2:
             compare_lines(f1.readlines(), f2.readlines(), 'answer.txt', args.files[0])
 
@@ -53,7 +59,7 @@ def main():
             compare_lines(f1.readlines(), f2.readlines(), args.files[0], args.files[1])
 
     else:
-        print(" 사용법 오류: 인자는 최대 2개까지 가능하거나, 파이프로 입력을 받을 수 있습니다.")
+        print("[ERROR] 인자는 1개-2개 입력하거나, 파이프로 입력을 넘겨야 합니다.")
         print("사용 예:")
         print("  pacheck output.txt              # answer.txt와 output.txt 비교")
         print("  pacheck file1.txt file2.txt     # 두 파일 직접 비교")
