@@ -1,5 +1,14 @@
-# compiler-pa-checker
+# smwu-compiler
 컴파일러 과목 programming assignment 자가 채점 도구
+
+
+## Quick Start Guide
+1. 패키지 설치
+  `pip install smwu-compiler`
+  - MacOS의 경우 `pip3` 사용
+2. `answer.txt` 작성: 과제의 출력 예시 붙여넣기
+3. CLI 명령어 사용해 비교
+
 
 ## Description
 두 **텍스트** 파일의 **내용 일치 여부**를 비교하는 CLI 도구입니다.
@@ -24,13 +33,9 @@
   입력 파일: This is test.
 ```
 
-## Quick Start Guide
-1. `answer.txt` 작성: 과제의 출력 예시 붙여넣기
-2. CLI 명령어 사용해 비교
-
-
 ## Upcoming Next
 - [ ] parse tree 시각화
+
 
 ------
 ### Author
