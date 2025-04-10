@@ -24,7 +24,9 @@
   입력 파일: This is test.
 ```
 
-## Install
+## Quick Start Guide
+1. `answer.txt` 작성: 과제의 출력 예시 붙여넣기
+2. CLI 명령어 사용해 비교
 
 
 ## Upcoming Next
