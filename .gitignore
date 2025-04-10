@@ -1,0 +1,11 @@
+# 빌드 결과물
+dist/
+build/
+*.egg-info/
+
+# Python 일반 캐시 파일
+__pycache__/
+*.py[cod]
+*.pyo
+
+.DS_Store
